@@ -30,9 +30,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push Docker
-        uses: docker/build-push-action@v4  # Correct version specified here
+        uses: docker/build-push-action@v4
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: my-image-name:$(date +%s)
+          tags: my-image-name:latest
